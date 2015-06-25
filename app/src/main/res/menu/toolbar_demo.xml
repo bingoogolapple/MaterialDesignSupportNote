@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/toolbar_demo_item_collect"
+        android:icon="@mipmap/collect"
+        android:orderInCategory="100"
+        android:title="收藏"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/toolbar_demo_item_feedback"
+        android:icon="@mipmap/feedback"
+        android:orderInCategory="100"
+        android:title="反馈"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/toolbar_demo_item_help"
+        android:icon="@mipmap/help"
+        android:orderInCategory="100"
+        android:title="帮助"
+        app:showAsAction="never" />
+</menu>

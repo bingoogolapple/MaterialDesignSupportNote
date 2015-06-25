@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    style="@style/MatchMatch"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout style="@style/MatchMatch.Vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <FrameLayout
+            android:id="@+id/frameContent"
+            style="@style/MatchMatch">
+
+            <LinearLayout style="@style/MatchMatch.Vertical">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout"
+                    style="@style/MatchWrap"
+                    android:background="@color/navigationBarColor"
+                    app:tabMode="scrollable" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    style="@style/MatchAuto" />
+            </LinearLayout>
+
+            <!-- FloatingActionButton作为子元素加入FloatingActionButton,然后将FloatingActionButton作为参数传给Snackbar.make()的时候，Snackbar会遮住FloatingActionButton -->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                style="@style/WrapWrap"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/size_small"
+                android:layout_marginLeft="@dimen/size_small"
+                android:src="@mipmap/fab"
+                app:borderWidth="3dp"
+                app:fabSize="normal" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationView"
+        style="@style/WrapMatch"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header_demo"
+        app:menu="@menu/navigation_demo" />
+</android.support.v4.widget.DrawerLayout>
+

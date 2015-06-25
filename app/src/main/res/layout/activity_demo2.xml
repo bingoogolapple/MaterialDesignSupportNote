@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        style="@style/MatchMatch">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            style="@style/MatchMatch">
+
+            <LinearLayout style="@style/MatchMatch.Vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_demo2_username"
+                    style="@style/MatchWrap"
+                    android:layout_margin="@dimen/size_small">
+
+                    <EditText
+                        android:id="@+id/et_demo2_username"
+                        style="@style/MatchWrap"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="@dimen/size_small"
+                        android:hint="用户名" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_demo2_pwd"
+                    style="@style/MatchWrap"
+                    android:layout_margin="@dimen/size_small">
+
+                    <EditText
+                        android:id="@+id/et_demo2_pwd"
+                        style="@style/MatchWrap"
+                        android:layout_marginTop="@dimen/size_small"
+                        android:hint="密码"
+                        android:inputType="textPassword" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_demo2_login"
+                    style="@style/MatchWrap"
+                    android:layout_margin="@dimen/size_small"
+                    android:background="@color/navigationBarColor"
+                    android:text="登录"
+                    android:onClick="onClick" />
+            </LinearLayout>
+
+            <!-- FloatingActionButton作为子元素加入CoordinatorLayout,然后将CoordinatorLayout作为参数传给Snackbar.make()的时候，Snackbar不会遮住FloatingActionButton，而是将其网上顶 -->
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                style="@style/WrapWrap"
+                android:layout_gravity="bottom|left"
+                android:layout_marginBottom="@dimen/size_small"
+                android:layout_marginLeft="@dimen/size_small"
+                android:src="@mipmap/fab"
+                android:onClick="onClick"
+                app:borderWidth="3dp"
+                app:fabSize="normal"
+                app:rippleColor="@color/navigationBarColor" />
+        </android.support.design.widget.CoordinatorLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigationView"
+            style="@style/WrapMatch"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/drawer_header_demo"
+            app:menu="@menu/navigation_demo" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
