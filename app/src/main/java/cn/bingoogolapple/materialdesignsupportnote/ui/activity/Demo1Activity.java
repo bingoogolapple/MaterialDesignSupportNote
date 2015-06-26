@@ -1,5 +1,6 @@
 package cn.bingoogolapple.materialdesignsupportnote.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -72,7 +73,6 @@ public class Demo1Activity extends AppCompatActivity {
     }
 
     private void setUpNavDrawer() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mToolbar.setNavigationIcon(R.drawable.selector_drawer);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +124,10 @@ public class Demo1Activity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void onClickFab(View view) {
+        startActivity(new Intent(Demo1Activity.this, TwoActivity.class));
     }
 
     @Override

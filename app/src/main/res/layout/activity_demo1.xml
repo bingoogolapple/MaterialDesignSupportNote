@@ -30,6 +30,7 @@
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab"
                 style="@style/WrapWrap"
+                android:onClick="onClickFab"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="@dimen/size_small"
                 android:layout_marginLeft="@dimen/size_small"

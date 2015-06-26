@@ -10,13 +10,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-
-import java.lang.reflect.Method;
 
 import cn.bingoogolapple.materialdesignsupportnote.R;
 import cn.bingoogolapple.materialdesignsupportnote.util.SnackbarUtil;
@@ -78,24 +75,7 @@ public class Demo2Activity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onMenuOpened(int featureId, Menu menu) {
-        Log.i("bingo", "onMenuOpened " + menu.getClass().getName());
-//        if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
-        if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
-            try {
-                Method method = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
-                method.setAccessible(true);
-                method.invoke(menu, true);
-            } catch (Exception e) {
-            }
-        }
-//        }
-        return super.onMenuOpened(featureId, menu);
-    }
-
     private void setUpNavDrawer() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mDrawerToggle = new ActionBarDrawerToggle(this,
                 mDrawerLayout,
                 mToolbar,
