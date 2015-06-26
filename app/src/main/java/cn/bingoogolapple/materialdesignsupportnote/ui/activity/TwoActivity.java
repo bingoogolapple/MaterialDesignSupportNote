@@ -21,10 +21,13 @@ public class TwoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // 自定义返回图标
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.selector_drawer);
+
+        // 自定义返回按钮图标
+//        toolbar.setNavigationIcon(R.drawable.selector_back);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.selector_back);
     }
 
     public void changeToThree(View view) {
