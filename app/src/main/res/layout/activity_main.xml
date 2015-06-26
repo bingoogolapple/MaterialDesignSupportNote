@@ -15,4 +15,11 @@
         android:background="@color/navigationBarColor"
         android:onClick="demo2"
         android:text="Demo2" />
+
+    <Button
+        style="@style/MatchWrap"
+        android:layout_marginTop="@dimen/size_small"
+        android:background="@color/navigationBarColor"
+        android:onClick="demo3"
+        android:text="Demo3" />
 </LinearLayout>

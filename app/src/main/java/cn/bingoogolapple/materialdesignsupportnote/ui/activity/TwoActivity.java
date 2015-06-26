@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 import cn.bingoogolapple.materialdesignsupportnote.R;
 
@@ -22,12 +23,19 @@ public class TwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) toolbar.getLayoutParams();
+        lp.setMargins(10,10,10,10);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // 自定义返回按钮图标
 //        toolbar.setNavigationIcon(R.drawable.selector_back);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.selector_back);
+
+
+
+        Toolbar customToolbar = (Toolbar) findViewById(R.id.customToolbar);
+        customToolbar.inflateMenu(R.menu.toolbar_demo);
     }
 
     public void changeToThree(View view) {
