@@ -1,13 +1,13 @@
 <resources>
 
     <!-- 去掉ActionBar，欲练此功，必先自宫 -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- 状态栏颜色 -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- toolbar（actionbar）背景颜色 -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!-- 窗口的背景颜色 -->
-        <item name="android:windowBackground">@color/windowBackground</item>
+        <!--<item name="android:windowBackground">@color/windowBackground</item>-->
         <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
     </style>

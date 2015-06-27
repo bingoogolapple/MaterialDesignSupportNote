@@ -5,42 +5,43 @@
     style="@style/MatchMatch"
     android:fitsSystemWindows="true">
 
-    <LinearLayout style="@style/MatchMatch.Vertical">
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        style="@style/MatchMatch.Vertical">
 
-        <include layout="@layout/toolbar" />
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayoutppbar"
+            style="@style/MatchWrap"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <FrameLayout
-            android:id="@+id/frameContent"
-            style="@style/MatchMatch">
+            <include layout="@layout/toolbar" />
 
-            <LinearLayout style="@style/MatchMatch.Vertical">
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                style="@style/MatchWrap"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:tabMode="scrollable"/>
 
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tabLayout"
-                    style="@style/MatchWrap"
-                    android:background="@color/navigationBarColor"
-                    app:tabMode="scrollable" />
+        </android.support.design.widget.AppBarLayout>
 
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewPager"
-                    style="@style/MatchAuto" />
-            </LinearLayout>
+        <!-- 加上app:layout_behavior="@string/appbar_scrolling_view_behavior"，使ViewPager不被AppBarLayout遮盖 -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            style="@style/MatchMatch"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-            <!-- FloatingActionButton作为子元素加入FloatingActionButton,然后将FloatingActionButton作为参数传给Snackbar.make()的时候，Snackbar会遮住FloatingActionButton -->
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab"
-                style="@style/WrapWrap"
-                android:onClick="onClickFab"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="@dimen/size_small"
-                android:layout_marginLeft="@dimen/size_small"
-                android:src="@mipmap/fab"
-                app:borderWidth="3dp"
-                app:fabSize="normal" />
-
-        </FrameLayout>
-
-    </LinearLayout>
+        <!-- FloatingActionButton作为子元素加入FloatingActionButton,然后将FloatingActionButton作为参数传给Snackbar.make()的时候，Snackbar会遮住FloatingActionButton -->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            style="@style/WrapWrap"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/size_small"
+            android:layout_marginRight="@dimen/size_small"
+            android:onClick="onClickFab"
+            android:src="@mipmap/fab"
+            app:borderWidth="3dp"
+            app:fabSize="normal" />
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigationView"

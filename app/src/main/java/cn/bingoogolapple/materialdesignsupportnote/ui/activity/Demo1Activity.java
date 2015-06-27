@@ -2,6 +2,7 @@ package cn.bingoogolapple.materialdesignsupportnote.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,7 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import cn.bingoogolapple.materialdesignsupportnote.R;
 import cn.bingoogolapple.materialdesignsupportnote.ui.fragment.ContentFragment;
@@ -25,7 +25,7 @@ public class Demo1Activity extends AppCompatActivity {
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-    private FrameLayout mFrameContent;
+    private CoordinatorLayout mCoordinatorLayout;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
@@ -43,7 +43,7 @@ public class Demo1Activity extends AppCompatActivity {
     private void initView() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        mFrameContent = (FrameLayout) findViewById(R.id.frameContent);
+        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         mNavigationView = (NavigationView) findViewById(R.id.navigationView);
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -56,13 +56,13 @@ public class Demo1Activity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.toolbar_demo_item_collect:
-                        SnackbarUtil.show(mFrameContent, item.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
                         break;
                     case R.id.toolbar_demo_item_feedback:
-                        SnackbarUtil.show(mFrameContent, item.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
                         break;
                     case R.id.toolbar_demo_item_help:
-                        SnackbarUtil.show(mFrameContent, item.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
                         break;
                     default:
                         break;
@@ -90,16 +90,16 @@ public class Demo1Activity extends AppCompatActivity {
                 hideDrawer();
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_demo_item_1:
-                        SnackbarUtil.show(mFrameContent, menuItem.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
                         break;
                     case R.id.navigation_demo_item_2:
-                        SnackbarUtil.show(mFrameContent, menuItem.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
                         break;
                     case R.id.navigation_demo_item_3:
-                        SnackbarUtil.show(mFrameContent, menuItem.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
                         break;
                     case R.id.navigation_demo_item_4:
-                        SnackbarUtil.show(mFrameContent, menuItem.getTitle());
+                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
                         break;
                     default:
                         break;

@@ -12,6 +12,7 @@
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appBarLayout"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             style="@style/MatchWrap">
 
             <android.support.design.widget.CollapsingToolbarLayout
@@ -47,6 +48,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:layout_collapseMode="pin" />
 
             </android.support.design.widget.CollapsingToolbarLayout>
@@ -63,76 +65,79 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本1" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本2" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本3" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本4" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
+                    android:gravity="center"
                     android:text="测试文本5" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本6" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本7" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
+                    android:gravity="center"
                     android:text="测试文本8" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本9" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本10" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本11" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
+                    android:gravity="center"
                     android:text="测试文本12" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="测试文本11" />
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
