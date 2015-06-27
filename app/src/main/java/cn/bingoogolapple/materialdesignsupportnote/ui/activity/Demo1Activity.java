@@ -91,6 +91,12 @@ public class Demo1Activity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_demo_item_1:
                         SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
+//                        TypedValue typedValue = new TypedValue();
+//                        getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
+//                        int color = typedValue.data;
+                        int color = getResources().getColor(R.color.testStatusBarColor);
+                        // 注意setStatusBarBackgroundColor方法需要将fitsSystemWindows设置为true才会生效
+                        mDrawerLayout.setStatusBarBackgroundColor(color);
                         break;
                     case R.id.navigation_demo_item_2:
                         SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());

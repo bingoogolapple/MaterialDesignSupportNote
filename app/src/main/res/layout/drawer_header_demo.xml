@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchWrap.Vertical"
     android:background="@mipmap/bg_drawer_header_demo"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:gravity="center_horizontal">
 
     <ImageView
@@ -13,14 +14,12 @@
         style="@style/WrapWrap"
         android:layout_marginTop="5dp"
         android:text="bingoogolapple"
-        android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
     <TextView
         style="@style/WrapWrap"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:text="https://github.com/bingoogolapple"
-        android:textColor="@android:color/white" />
+        android:text="https://github.com/bingoogolapple"/>
 
 </LinearLayout>
