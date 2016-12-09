@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -43,11 +42,6 @@ public class Demo3Activity extends AppCompatActivity {
 
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Demo3");
-
-        // 此时设置title是无效的
-//        mToolbar.setTitle("案例3");
-//        setTitle("案例33");
-//        getSupportActionBar().setTitle("案例3333");
     }
 
     private void initView() {
@@ -64,24 +58,21 @@ public class Demo3Activity extends AppCompatActivity {
 
     private void setUpToolbar() {
         setSupportActionBar(mToolbar);
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.toolbar_demo_item_collect:
-                        SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
-                        break;
-                    case R.id.toolbar_demo_item_feedback:
-                        SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
-                        break;
-                    case R.id.toolbar_demo_item_help:
-                        SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
-                        break;
-                    default:
-                        break;
-                }
-                return true;
+        mToolbar.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.toolbar_demo_item_collect:
+                    SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
+                    break;
+                case R.id.toolbar_demo_item_feedback:
+                    SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
+                    break;
+                case R.id.toolbar_demo_item_help:
+                    SnackbarUtil.show(mCoordinatorLayout, item.getTitle());
+                    break;
+                default:
+                    break;
             }
+            return true;
         });
     }
 
@@ -91,34 +82,31 @@ public class Demo3Activity extends AppCompatActivity {
                 mToolbar,
                 R.string.drawer_open,
                 R.string.drawer_close);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
     }
 
     private void setUpNavigationView() {
-        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                menuItem.setChecked(true);
-                hideDrawer();
-                switch (menuItem.getItemId()) {
-                    case R.id.navigation_demo_item_1:
-                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
-                        break;
-                    case R.id.navigation_demo_item_2:
-                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
-                        break;
-                    case R.id.navigation_demo_item_3:
-                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
-                        break;
-                    case R.id.navigation_demo_item_4:
-                        SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
-                        break;
-                    default:
-                        break;
-                }
-                return true;
+        mNavigationView.setNavigationItemSelectedListener(menuItem -> {
+            menuItem.setChecked(true);
+            hideDrawer();
+            switch (menuItem.getItemId()) {
+                case R.id.navigation_demo_item_1:
+                    SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
+                    break;
+                case R.id.navigation_demo_item_2:
+                    SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
+                    break;
+                case R.id.navigation_demo_item_3:
+                    SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
+                    break;
+                case R.id.navigation_demo_item_4:
+                    SnackbarUtil.show(mCoordinatorLayout, menuItem.getTitle());
+                    break;
+                default:
+                    break;
             }
+            return true;
         });
     }
 

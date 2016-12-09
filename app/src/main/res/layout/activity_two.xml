@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchMatch.Vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              style="@style/MatchMatch.Vertical">
 
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar"/>
 
     <Button
         style="@style/MatchWrap"
         android:layout_marginTop="@dimen/size_small"
         android:background="@color/navigationBarColor"
         android:onClick="changeToThree"
-        android:text="跳转到Three" />
+        android:text="跳转到Three"/>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/customToolbar"
         style="@style/MatchWrap"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:logo="@mipmap/number_2"
+        app:navigationIcon="@mipmap/number_1"
+        app:popupTheme="@style/CustomPopupTheme">
 
-        <ImageView
-            style="@style/WrapWrap"
-            android:src="@mipmap/ic_launcher" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#ff0000"/>
     </android.support.v7.widget.Toolbar>
 
 </LinearLayout>

@@ -9,15 +9,26 @@ import android.view.View;
 import cn.bingoogolapple.materialdesignsupportnote.R;
 
 public class MainActivity extends AppCompatActivity {
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setTitle("这是大标题");
-        getSupportActionBar().setSubtitle("这是小标题");
-        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(mToolbar);
+
+        mToolbar.setNavigationContentDescription("描述");
+        mToolbar.setSubtitle("小标题");
+        mToolbar.setLogo(R.mipmap.ic_launcher);
+        mToolbar.setNavigationIcon(R.mipmap.number_1);
+        // 如果没有在 setSupportActionBar(mToolbar) 之前调用过 mToolbar.setTitle 方法的话，后续再调用 mToolbar.setTitle 都不会生效，不过直接调用 ctivity 的 setTitle 方法设置标题就可以了
+//        mToolbar.setTitle("大标题");
+
+//        mToolbar.setContentInsetStartWithNavigation(0);
+
+        setTitle("大标题");
     }
 
     public void demo1(View view) {

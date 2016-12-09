@@ -24,7 +24,7 @@ public class TwoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_two);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) toolbar.getLayoutParams();
-        lp.setMargins(10,10,10,10);
+        lp.setMargins(10, 10, 10, 10);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -33,9 +33,11 @@ public class TwoActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.selector_back);
 
 
-
         Toolbar customToolbar = (Toolbar) findViewById(R.id.customToolbar);
         customToolbar.inflateMenu(R.menu.toolbar_demo);
+
+        // 设置溢出菜单的图标
+        customToolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.number_3));
     }
 
     public void changeToThree(View view) {

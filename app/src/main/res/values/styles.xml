@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- 去掉ActionBar，欲练此功，必先自宫 -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -10,9 +10,21 @@
         <!--<item name="android:windowBackground">@color/windowBackground</item>-->
         <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 更换Toolbar OVerFlow menu icon -->
+        <item name="actionOverflowButtonStyle">@style/OverFlowIcon</item>
+
     </style>
 
     <style name="AppTheme" parent="AppBaseTheme"></style>
+
+    <style name="OverFlowIcon" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@mipmap/number_4</item>
+    </style>
+
+    <style name="CustomPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">#ff0000</item>
+    </style>
 
 
 </resources>
