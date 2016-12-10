@@ -34,7 +34,8 @@ public class TwoActivity extends AppCompatActivity {
 
 
         Toolbar customToolbar = (Toolbar) findViewById(R.id.customToolbar);
-        customToolbar.inflateMenu(R.menu.toolbar_demo);
+//        customToolbar.inflateMenu(R.menu.toolbar_demo);
+        customToolbar.inflateMenu(R.menu.toolbar_demo_text);
 
         // 设置溢出菜单的图标
         customToolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.number_3));

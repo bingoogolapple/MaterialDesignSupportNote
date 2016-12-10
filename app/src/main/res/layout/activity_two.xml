@@ -17,13 +17,17 @@
         style="@style/MatchWrap"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:logo="@mipmap/number_2"
         app:navigationIcon="@mipmap/number_1"
-        app:popupTheme="@style/CustomPopupTheme">
+        app:subtitle="SubTitle"
+        app:titleTextColor="#ccccff"
+        app:subtitleTextColor="#ffcccc"
+        app:theme="@style/ToolbarTheme"
+        app:title="Title">
 
+        <!-- 包裹的 view 宽度太宽时会导致 title 和 subtitle 不能显示 -->
         <View
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="?attr/actionBarSize"
             android:background="#ff0000"/>
     </android.support.v7.widget.Toolbar>

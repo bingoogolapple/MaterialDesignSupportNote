@@ -10,19 +10,29 @@
         <!--<item name="android:windowBackground">@color/windowBackground</item>-->
         <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
-
-        <!-- 更换Toolbar OVerFlow menu icon -->
-        <item name="actionOverflowButtonStyle">@style/OverFlowIcon</item>
-
     </style>
 
     <style name="AppTheme" parent="AppBaseTheme"></style>
+
+
+
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
+        <!-- 更换Toolbar OVerFlow menu icon -->
+        <item name="actionOverflowButtonStyle">@style/OverFlowIcon</item>
+        <!-- 设置 toolbar 溢出菜单的文字的颜色 -->
+        <item name="android:textColor">#ff0000</item>
+        <!-- 设置 显示在toobar上菜单文字的颜色 -->
+        <item name="actionMenuTextColor">#00ff00</item>
+        <!-- 设置 toolbar 弹出菜单的字体大小和溢出菜单文字大小-->
+        <item name="android:textSize">15sp</item>
+    </style>
 
     <style name="OverFlowIcon" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:src">@mipmap/number_4</item>
     </style>
 
     <style name="CustomPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <!-- 弹出菜单文字颜色 -->
         <item name="android:textColor">#ff0000</item>
     </style>
 
