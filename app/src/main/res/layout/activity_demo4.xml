@@ -1,38 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
 
-    <Button
-        style="@style/MatchWrap"
-        android:layout_marginTop="@dimen/size_small"
-        android:onClick="changeToTwo"
-        android:text="changeToTwo"/>
+    <LinearLayout style="@style/MatchMatch.Vertical">
 
-    <Button
-        style="@style/MatchWrap"
-        android:layout_marginTop="@dimen/size_small"
-        android:onClick="changeToFour"
-        android:text="changeToFour"/>
+        <Button
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/size_small"
+            android:onClick="changeToTwo"
+            android:text="changeToTwo"/>
 
-    <TextView
-        android:id="@+id/tv_demo4_content"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text=""
-        android:textSize="30sp"/>
+        <Button
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/size_small"
+            android:onClick="changeToFour"
+            android:text="changeToFour"/>
+
+        <Button
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/size_small"
+            android:onClick="bottomOne"
+            android:text="bottomOne"/>
+
+        <Button
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/size_small"
+            android:onClick="bottomTwo"
+            android:text="bottomTwo"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            style="@style/MatchMatch"/>
+    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bnv_bottom_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@android:color/holo_blue_light"
+        android:layout_gravity="bottom"
+        app:itemBackground="@drawable/selector_item_background"
         app:itemIconTint="@color/selector_item_icon_tint"
         app:itemTextColor="@color/selector_item_text_color"
         app:menu="@menu/menu_bottom_navigation"/>
-</LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/design_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="300dp"
+        app:elevation="4dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="BottomSheetBehavior"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
