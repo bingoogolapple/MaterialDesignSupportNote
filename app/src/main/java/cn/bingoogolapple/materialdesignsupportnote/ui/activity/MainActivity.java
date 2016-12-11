@@ -64,4 +64,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, Demo3Activity.class));
     }
 
+    public void demo4(View view) {
+        startActivity(new Intent(this, Demo4Activity.class));
+    }
+
 }

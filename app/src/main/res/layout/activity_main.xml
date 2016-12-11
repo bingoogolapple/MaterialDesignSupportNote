@@ -23,6 +23,12 @@
         android:onClick="demo3"
         android:text="Demo3"/>
 
+    <Button
+        style="@style/MatchWrap"
+        android:layout_marginTop="@dimen/size_small"
+        android:onClick="demo4"
+        android:text="Demo4"/>
+
     <Switch
         style="@style/WrapWrap"
         android:text="Switch"

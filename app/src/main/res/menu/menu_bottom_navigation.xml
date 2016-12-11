@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_one"
+        android:icon="@mipmap/number_1"
+        android:title="One"/>
+
+    <item
+        android:id="@+id/action_two"
+        android:icon="@mipmap/number_2"
+        android:title="Two"/>
+
+    <item
+        android:id="@+id/action_three"
+        android:icon="@mipmap/number_3"
+        android:title="Three"/>
+
+    <item
+        android:id="@+id/action_four"
+        android:icon="@mipmap/number_4"
+        android:title="Four"/>
+</menu>
