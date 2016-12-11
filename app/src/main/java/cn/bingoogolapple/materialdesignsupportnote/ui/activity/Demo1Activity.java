@@ -75,7 +75,7 @@ public class Demo1Activity extends AppCompatActivity {
 
     private void setUpNavigationView() {
         mNavigationView.setNavigationItemSelectedListener(menuItem -> {
-            menuItem.setChecked(true);
+//            menuItem.setChecked(true);
             hideDrawer();
             switch (menuItem.getItemId()) {
                 case R.id.navigation_demo_item_1:
