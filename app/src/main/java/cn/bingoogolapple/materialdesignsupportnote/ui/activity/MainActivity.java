@@ -1,8 +1,11 @@
 package cn.bingoogolapple.materialdesignsupportnote.ui.activity;
 
+import android.app.UiModeManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -29,6 +32,24 @@ public class MainActivity extends AppCompatActivity {
 //        mToolbar.setContentInsetStartWithNavigation(0);
 
         setTitle("大标题");
+
+
+        SwitchCompat switchCompat = (SwitchCompat) findViewById(R.id.change_mode);
+        switchCompat.setOnCheckedChangeListener((buttonView, isChecked) -> {
+//            if (isChecked) {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                recreate();
+//            }
+
+            UiModeManager uiManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+            if (isChecked) {
+                uiManager.enableCarMode(0);
+                uiManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
+            } else {
+                uiManager.disableCarMode(0);
+                uiManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
+            }
+        });
     }
 
     public void demo1(View view) {

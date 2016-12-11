@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchMatch.Vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/MatchMatch.Vertical">
 
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar"/>
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawerLayout"
-        style="@style/MatchMatch">
+        style="@style/MatchMatch"
+        tools:openDrawer="left">
 
         <android.support.design.widget.CoordinatorLayout
             android:id="@+id/coordinatorLayout"
@@ -25,7 +27,7 @@
                         style="@style/MatchWrap"
                         android:layout_margin="16dp"
                         android:layout_marginTop="@dimen/size_small"
-                        android:hint="用户名" />
+                        android:hint="用户名"/>
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -39,7 +41,7 @@
                         style="@style/MatchWrap"
                         android:layout_marginTop="@dimen/size_small"
                         android:hint="密码"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"/>
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -48,8 +50,8 @@
                     style="@style/MatchWrap"
                     android:layout_margin="@dimen/size_small"
                     android:background="@color/navigationBarColor"
-                    android:text="登录"
-                    android:onClick="onClick" />
+                    android:onClick="onClick"
+                    android:text="登录"/>
             </LinearLayout>
 
             <!-- FloatingActionButton作为子元素加入CoordinatorLayout,然后将CoordinatorLayout作为参数传给Snackbar.make()的时候，Snackbar不会遮住FloatingActionButton，而是将其网上顶 -->
@@ -59,11 +61,11 @@
                 android:layout_gravity="bottom|left"
                 android:layout_marginBottom="@dimen/size_small"
                 android:layout_marginLeft="@dimen/size_small"
-                android:src="@mipmap/fab"
                 android:onClick="onClick"
+                android:src="@mipmap/fab"
                 app:borderWidth="3dp"
                 app:fabSize="normal"
-                app:rippleColor="@color/navigationBarColor" />
+                app:rippleColor="@color/navigationBarColor"/>
         </android.support.design.widget.CoordinatorLayout>
 
         <android.support.design.widget.NavigationView
@@ -71,7 +73,7 @@
             style="@style/WrapMatch"
             android:layout_gravity="start"
             app:headerLayout="@layout/drawer_header_demo"
-            app:menu="@menu/navigation_demo" />
+            app:menu="@menu/navigation_demo"/>
     </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

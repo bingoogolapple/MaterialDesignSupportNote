@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 去掉ActionBar，欲练此功，必先自宫 -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.NoActionBar">
         <!-- 状态栏颜色 -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- toolbar（actionbar）背景颜色 -->
@@ -23,9 +27,6 @@
         <item name="android:colorControlActivated" tools:targetApi="lollipop">#ff00ff00</item>
         <item name="android:colorControlNormal" tools:targetApi="lollipop">#ffff0000</item>
     </style>
-
-    <style name="AppTheme" parent="AppBaseTheme"></style>
-
 
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
         <!-- 更换Toolbar OVerFlow menu icon -->

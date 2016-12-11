@@ -1,6 +1,7 @@
 package cn.bingoogolapple.materialdesignsupportnote.ui.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
@@ -11,9 +12,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+
+import com.jaeger.library.StatusBarUtil;
 
 import cn.bingoogolapple.materialdesignsupportnote.R;
 import cn.bingoogolapple.materialdesignsupportnote.util.SnackbarUtil;
@@ -24,6 +29,9 @@ public class Demo3Activity extends AppCompatActivity {
     private NavigationView mNavigationView;
     private CoordinatorLayout mCoordinatorLayout;
     private ActionBarDrawerToggle mDrawerToggle;
+    private AppBarLayout mAppBarLayout;
+    private CollapsingToolbarLayout mCollapsingToolbarLayout;
+    private ImageView mHeaderIv;
 
     private TextInputLayout mUsernameTil;
     private EditText mUsernameEt;
@@ -39,9 +47,19 @@ public class Demo3Activity extends AppCompatActivity {
         setUpNavDrawer();
         setUpNavigationView();
 
+        mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                Log.i("BGA", "verticalOffset " + verticalOffset);
+                if (verticalOffset <= -mHeaderIv.getHeight() / 2) {
+                    mCollapsingToolbarLayout.setTitle("Demo3");
+                } else {
+                    mCollapsingToolbarLayout.setTitle("");
+                }
+            }
+        });
 
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-        collapsingToolbarLayout.setTitle("Demo3");
+        StatusBarUtil.setTranslucentForDrawerLayout(this, mDrawerLayout);
     }
 
     private void initView() {
@@ -49,6 +67,9 @@ public class Demo3Activity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         mNavigationView = (NavigationView) findViewById(R.id.navigationView);
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout);
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+        mHeaderIv = (ImageView) findViewById(R.id.headerIv);
 
         mUsernameTil = (TextInputLayout) findViewById(R.id.til_demo2_username);
         mPwdTil = (TextInputLayout) findViewById(R.id.til_demo2_pwd);
@@ -88,7 +109,6 @@ public class Demo3Activity extends AppCompatActivity {
 
     private void setUpNavigationView() {
         mNavigationView.setNavigationItemSelectedListener(menuItem -> {
-            menuItem.setChecked(true);
             hideDrawer();
             switch (menuItem.getItemId()) {
                 case R.id.navigation_demo_item_1:
