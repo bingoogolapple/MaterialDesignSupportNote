@@ -45,7 +45,11 @@
             android:layout_marginRight="@dimen/size_small"
             android:onClick="onClickFab"
             android:src="@mipmap/fab"
-            app:borderWidth="3dp"
+            app:elevation="10dp"
+            app:borderWidth="5dp"
+            app:rippleColor="#0000ff"
+            app:pressedTranslationZ="50dp"
+            app:backgroundTint="#ff0000"
             app:fabSize="normal"/>
     </android.support.design.widget.CoordinatorLayout>
 

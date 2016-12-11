@@ -10,10 +10,21 @@
         <!--<item name="android:windowBackground">@color/windowBackground</item>-->
         <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 底部导航栏的颜色 -->
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            @color/navigationBarColor
+        </item>
+        <!-- 系统将在window里面绘制status bar -->
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+
+        <item name="android:textColorPrimary">@android:color/holo_green_light</item>
+        <item name="android:colorControlHighlight" tools:targetApi="lollipop">#ff0000ff</item>
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">#ff00ff00</item>
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">#ffff0000</item>
     </style>
 
     <style name="AppTheme" parent="AppBaseTheme"></style>
-
 
 
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
